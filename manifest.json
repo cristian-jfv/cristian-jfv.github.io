@@ -1,6 +1,6 @@
 {
-  "name": "egui Template PWA",
-  "short_name": "egui-template-pwa",
+  "name": "Calculator",
+  "short_name": "calculator",
   "icons": [
     {
       "src": "./icon-256.png",
