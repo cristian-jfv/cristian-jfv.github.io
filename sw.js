@@ -1,9 +1,9 @@
-var cacheName = 'calculator';
+var cacheName = 'decay-radiation-search';
 var filesToCache = [
   './',
   './index.html',
-  './calculator_webapp.js',
-  './calculator_webapp_bg.wasm',
+  './decay-radiation-search.js',
+  './decay-radiation-search.wasm',
 ];
 
 /* Start the service worker and cache all of the app's content */

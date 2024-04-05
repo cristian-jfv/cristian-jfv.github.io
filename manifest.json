@@ -1,6 +1,6 @@
 {
-  "name": "Calculator",
-  "short_name": "calculator",
+  "name": "Decay Radiation Search",
+  "short_name": "decay-radiation-search",
   "icons": [
     {
       "src": "./icon-256.png",
