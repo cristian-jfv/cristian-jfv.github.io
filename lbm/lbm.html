@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="icon" href="favicon.png">
+<title>LBM</title>
+</head>
+<body>
+<div class="container py-4">
+<header class="pb-3 mb-4 border-bottom">
+<span class="fs-4">Lattice Boltzmann Method</span>
+         <a style="float: right;" class="btn btn-outline-primary" href="https://github.com/cristian-jfv/lattice-boltzmann-method">View on GitHub</a>
+</header>
+
+       The library offers a GPU accelerated lattice Boltzmann method (LBM) implementation. It uses the BGK operator to calculate the equilibrium and the D2Q9 velocity set.
+       Examples of several boundary conditions are provided:
+       <ul>
+         <li><a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/horizontal_poiseuille_test.cpp#L145">Bounce back</a>
+         </li>
+         <li><a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/free_stream_test.cpp#L127">Bounce forward</a></li>
+         <li><a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/free_stream_test.cpp#L103">Open inlet/outlet</a></li>
+       </ul>
+
+       Fluid-structure interaction can be simulated via the immersed boundary method.
+Below are a couple of study cases that illustrate the integration of these capabilities.
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+           <a class="btn" href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/cylinder_test.cpp"><h4>Flow around a cylinder</h4></a>[<a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/cylinder_test.cpp">source code</a>]<br>
+           This study case uses the multi direct-forcing IB-LBM to simulate the interaction between the fluid and a cylinder fixed in place. The plots are in lattice units.
+          <div class="container">
+            <video width=100% class="object-fit-contain" controls>
+              <source src="video/ib-Re100-cylinder.mp4">
+            </video>
+          </div>
+         </li>
+
+    <li class="list-group-item">
+           <a class="btn" href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/horizontal_poiseuille_test.cpp"><h4>Poiseuille flow</h4></a>[<a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/horizontal_poiseuille_test.cpp">source code</a>]<br>
+             This example is a pressure driven flow with bounce back conditions at the top and bottom boundaries to model no-slip walls. <a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/gravity_test.cpp">Another example</a> uses gravity as the driving mechanism. The plots are in lattice units.
+          <div class="container">
+            <video width=100% class="object-fit-contain" controls>
+              <source src="video/results-hp.mp4">
+            </video>
+          </div>
+    </li>
+
+  </ul>
+
+</div>
+</body>
+</html>
