@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="icon" href="favicon.png">
+<title>Plasma shock</title>
+</head>
+<body>
+<div class="container py-4">
+<header class="pb-3 mb-4 border-bottom">
+<span class="fs-4">Plasma Shockwave simulation</span>
+         <a style="float: right;" class="btn btn-outline-primary" href="https://github.com/cristian-jfv/plasma-shock">View on GitHub</a>
+</header>
+       The code uses an upwind finite volume discretization for the ideal MHD equations in the conservative form. Several schemes approximate the numerical fluxes across the cell boundaries, namely:
+       <ul>
+         <li>Lax-Friedrichs (LxF)</li>
+         <li>Total Variation Diminishing Lax-Friedrichs (TVD)</li>
+         <li>First Order Arithmetic Mean Matrix (FOAMM)</li>
+       </ul>
+       The figure below shows the simulation results at time t=0.2 s for the Brio & Wu problem [<a href="https://cristian-jfv.github.io/ps/ps.html#BrioWu">1</a>] using 1000 cells. The general structure of the
+solution is in agreement with those reported in the literature[<a href="https://cristian-jfv.github.io/ps/ps.html#BrioWu">1</a>, <a href="https://cristian-jfv.github.io/ps/ps.html#Falle">2</a>], from left to right:
+       <ul>
+         <li>Fast rarefaction (x = -0.27)</li>
+         <li>Slow compound wave (x = -0.1)</li>
+         <li>Contact discontinuity (x = 0.15)</li>
+         <li>Slow shock (x = 0.36)</li>
+         <li>Fast rarefaction (x = 0.9)</li>
+       </ul>
+As expected, the schemes based on LxF show a more diffuse behaviour than the FOAMM scheme, which uses fewer cells to resolve the discontinuities.
+
+    <div class="container">
+       <img src="result-comparison.png" class="object-fit-cover card-img-top">
+    </div>
+
+       <br>
+       <h5>References</h5>
+       <ol>
+         <li id="BrioWu">Brio, M. and Wu, C.C., 1988. An upwind differencing scheme for the equations of ideal magnetohydrodynamics. Journal of computational physics, 75(2), pp.400-422.</li>
+         <li id="Falle">Falle, S.A.E.G., Komissarov, S.S. and Joarder, P., 1998. A multidimensional upwind scheme for magnetohydrodynamics. Monthly Notices of the Royal Astronomical Society, 297(1), pp.265-277.</li>
+       </ol>
+</div>
+</body>
+</html>
