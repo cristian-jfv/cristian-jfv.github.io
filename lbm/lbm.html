@@ -24,9 +24,9 @@
        Further capabilities are fluid-structure interaction and multiphase flows.
        <br>
            <a class="btn" href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/cylinder_test.cpp">
-             <h5>Structure-Fluid Interaction: Flow around a cylinder</h5>
+             <h4>Structure-Fluid Interaction: Flow around a cylinder</h4>
            </a>[<a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/cylinder_test.cpp">source code</a>]<br>
-           This study case uses the multi direct-forcing IB-LBM [<a href="https://cristian-jfv.github.io/lbm/lbm.html#LBMPP">1</a>,<a href="https://cristian-jfv.github.io/lbm/lbm.html#KangHassan">2</a>] to simulate the interaction between the fluid and a cylinder fixed in place. The plots are in lattice units.
+           This study case uses the multi direct-forcing IB-LBM [<a href="https://cristian-jfv.github.io/lbm/lbm.html#LBMPP">1</a>, <a href="https://cristian-jfv.github.io/lbm/lbm.html#KangHassan">2</a>] to simulate the interaction between the fluid and a cylinder fixed in place. The plots are in lattice units.
           <div class="container">
             <video width=100% class="object-fit-contain" controls>
               <source src="video/ib-Re100-cylinder.mp4">
@@ -34,7 +34,7 @@
           </div>
        <br>
        <a class="btn" href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/master/test/mrt_rayleigh_taylor.cpp">
-         <h5>Multiphase flow (work in progress)</h5>
+         <h4>Multiphase flow (work in progress)</h4>
        </a>[<a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/master/test/mrt_rayleigh_taylor.cpp">source code</a>]<br>
        A colour-gradient model with a multi-relaxation-time (MRT) collision operator is used to simulate a multiphase flow following [<a href="https://cristian-jfv.github.io/lbm/lbm.html#Ba">3</a>].
 The intended study case is a multiple-mode Rayleigh-Taylor instability [<a href="https://cristian-jfv.github.io/lbm/lbm.html#He">4</a>]; however, further refinement is required so that the heavy (red) and light (purple) fluid dynamics exhibit the characteristic profiles reported in the literature.
@@ -43,9 +43,27 @@ The intended study case is a multiple-mode Rayleigh-Taylor instability [<a href=
            <source src="video/multiphase.mp4">
          </video>
        </div>
+
+
+       <br>
+       <a class="btn" href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/master/test/rectangle_sedimentation_test.cpp">
+         <h4>Advection-Diffusion: Sediment Transport</h4>
+       </a>[<a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/master/test/rectangle_sedimentation_test.cpp">source code</a>]<br>
+       
+The fluid simulation consists of a constant velocity inlet and outlet, a no-slip boundary condition at the bottom (including the rectangle), and a specular top.
+An additional distribution function models the sediment concentration. The advection velocity is obtained at each time step from the fluid in a one-way coupling 
+       [<a href="https://cristian-jfv.github.io/lbm/lbm.html#LBMPP">1</a>, <a href="https://cristian-jfv.github.io/lbm/lbm.html#Morrison">5</a>].
+       <div class="container">
+         <video width=100% class="object-fit-contain" controls>
+           <source src="video/sediment-transport.mp4">
+         </video>
+       </div>
+
+
+
        <br>
            <a class="btn" href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/horizontal_poiseuille_test.cpp">
-             <h5>Poiseuille flow</h5>
+             <h4>Poiseuille flow</h4>
            </a>[<a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/horizontal_poiseuille_test.cpp">source code</a>]<br>
              This example is a pressure driven flow with bounce back conditions at the top and bottom boundaries to model no-slip walls. <a href="https://github.com/cristian-jfv/lattice-boltzmann-method/blob/8b8e27e8cabd99ebd6dfb3f48a5168045f3212fa/test/gravity_test.cpp">Another example</a> uses gravity as the driving mechanism. The plots are in lattice units.
           <div class="container">
@@ -54,12 +72,13 @@ The intended study case is a multiple-mode Rayleigh-Taylor instability [<a href=
             </video>
           </div>
 <br>
-       <h5>References</h5>
+       <h4>References</h4>
        <ol>
          <li id="LBMPP">Timm, K., Kusumaatmaja, H., Kuzmin, A., Shardt, O., Silva, G. and Viggen, E., 2016. The lattice Boltzmann method: principles and practice. Cham, Switzerland: Springer International Publishing AG.</li>
          <li id="KangHassan">Kang, S.K. and Hassan, Y.A., 2011. A comparative study of direct-forcing immersed boundary-lattice Boltzmann methods for stationary complex boundaries. International Journal for Numerical Methods in Fluids, 66(9), pp.1132-1158.</li>
          <li id="Ba">Ba, Y., Liu, H., Li, Q., Kang, Q. and Sun, J., 2016. Multiple-relaxation-time color-gradient lattice Boltzmann model for simulating two-phase flows with high density ratio. Physical Review E, 94(2), p.023310.</li>
          <li id="He">He, X., Chen, S. and Zhang, R., 1999. A lattice Boltzmann scheme for incompressible multiphase flow and its application in simulation of Rayleigh-Taylor instability. Journal of computational physics, 152(2), pp.642-663.</li>
+         <li id="Morrison">Morrison, H.E. and Leder, A., 2018. Sediment transport in turbulent flows with the lattice Boltzmann method. Computers & Fluids, 172, pp.340-351.</li>
        </ol>
 
 </div>
